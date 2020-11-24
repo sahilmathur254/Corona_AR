@@ -19,4 +19,11 @@ public class BarBehaviour : MonoBehaviour
     {
         desiredScale.y = y;
     }
+
+    public void Reset()
+    {
+        desiredScale.y = 0;
+        transform.localScale = desiredScale;
+    }
+
 }

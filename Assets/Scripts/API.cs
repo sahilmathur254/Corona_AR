@@ -38,12 +38,13 @@ public class API : MonoBehaviour
         //Date_reported,Country_code,Country,WHO_region,New_cases,Cumulative_cases,New_deaths,Cumulative_death
         List<string> lines = data.Split('\n').ToList();
         lines.RemoveAt(0);
+        lines.RemoveAt(lines.Count - 1);
 
         List<TimeData> dataList = new List<TimeData>();
 
         foreach (string line in lines)
         { 
-        List<string> linesData = data.Split(',').ToList();
+        List<string> linesData = line.Split(',').ToList();
             TimeData timeData = new TimeData
             {
                 date = DateTime.Parse(linesData[0]),

@@ -43,7 +43,16 @@ public class GraphController : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
 
+            foreach (BarBehaviour bar in bars)
+            {
+                bar.Reset();
+            }
+
         }
+
+        
+
+
     }
 
 }
